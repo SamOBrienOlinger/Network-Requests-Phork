@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import axios from 'axios';
+import axios from 'axios';
 
 export class HTTPRequests extends Component {
     constructor(props) {
@@ -9,6 +9,12 @@ export class HTTPRequests extends Component {
          posts : []
       }
     }
+    componentDidMount() {
+        axios.get('https://jsonplaceholder.typicode.com/posts/1')
+        .then(response => {
+            console.log(response);
+    })}
+
   render() {
     return (
       <div>
